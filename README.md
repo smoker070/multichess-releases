@@ -29,8 +29,10 @@ into training. Nothing to install besides the app itself: the engine is inside.
 |---|---|---|
 | Windows | `Multichess-Setup-<version>.exe` | Windows 10 / 11, 64-bit |
 | macOS | `Multichess-<version>.dmg` | A recent macOS on Apple Silicon (M1 or newer) |
+| Linux (ARM64) | `Multichess-<version>-aarch64.AppImage` | A recent distribution on a 64-bit ARM computer |
+| Linux (64-bit Intel/AMD) | `Multichess-<version>-x86_64.AppImage` | coming soon |
 
-Get them from the [latest release](../../releases/latest). Linux is not available yet.
+Get them from the [latest release](../../releases/latest).
 
 ### Install
 
@@ -40,14 +42,25 @@ click *More info → Run anyway*.
 **macOS**: open the `.dmg` and drag Multichess to *Applications*. The first time, right-click the app and choose *Open*
 (the app is not notarised yet).
 
+**Linux**: download the AppImage, make it executable and run it:
+
+```bash
+chmod +x Multichess-*.AppImage
+./Multichess-*.AppImage
+```
+
+If it complains about FUSE, install it (`libfuse2`, on Ubuntu 24.04 `libfuse2t64`) or start it with
+`APPIMAGE_EXTRACT_AND_RUN=1 ./Multichess-*.AppImage`. On Linux Multichess opens in your default web browser (it is the
+same app, served locally on your computer) and closes itself some minutes after you close the browser tab.
+
 ## Updates
 
 Multichess checks this repository when it starts and tells you when a newer version is out. Press **Update now** and it
-downloads the new version, installs it and restarts, nothing to download by hand. You can also check at any time in
-*Settings → Data → Updates*, or switch the automatic check off there.
+downloads the new version, installs it and restarts, nothing to download by hand (on Linux this works when you run the
+AppImage). You can also check at any time in *Settings → Data → Updates*, or switch the automatic check off there.
 
-The update feed is the pair of small files attached to every release: `latest.yml` (Windows) and `latest-mac.yml` (macOS),
-each carrying the version, the installer name, its SHA-512 checksum and the release notes. The app verifies the checksum
+The update feed is a small file attached to every release: `latest.yml` (Windows), `latest-mac.yml` (macOS) and
+`latest-linux.yml` / `latest-linux-arm64.yml` (Linux), each carrying the version, the installer name, its SHA-512 checksum and the release notes. The app verifies the checksum
 before installing anything.
 
 ## Privacy

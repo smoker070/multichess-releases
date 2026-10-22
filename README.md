@@ -20,7 +20,7 @@ into training. Nothing to install besides the app itself: the engine is inside.
 - **Puzzles from your own games**: Daily, Rush, Battle, Custom, spaced repetition
 - **Insights**: openings, clock use, progress over time, a weekly plan
 - **Play Stockfish** at several levels with live move feedback
-- **Looks the way you like**: board themes, ten piece sets, photo backgrounds, English / Русский / O‘zbekcha
+- **Looks the way you like**: board themes, 15 piece sets, photo backgrounds, English / Русский / O‘zbekcha
 - **Private by design**: your games and reviews stay on your computer
 
 ## Download
